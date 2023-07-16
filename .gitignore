@@ -28,6 +28,7 @@ vendor-prefixed/*
 !vendor-prefixed/.gitkeep
 !tests
 tests/*.suite.yml
+bin/strauss.phar
 build/
 coverage/*
 schema.graphql

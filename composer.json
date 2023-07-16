@@ -24,7 +24,8 @@
       "include_modified_date": false,
       "packages" : [
         "firebase/php-jwt",
-        "ircmaxell/random-lib"
+        "ircmaxell/random-lib",
+        "ircmaxell/security-lib"
       ],
       "exclude_from_prefix": {
         "file_patterns": []
@@ -49,6 +50,7 @@
     "php": "^7.3||^8.0",
     "firebase/php-jwt": "^5.2",
     "ircmaxell/random-lib": "^1.2",
+    "ircmaxell/security-lib": "^1.1.0",
     "composer/semver": "^1.5"
   },
   "require-dev": {
@@ -66,8 +68,7 @@
     "squizlabs/php_codesniffer": "3.5.4",
     "codeception/module-rest": "^1.2",
     "wp-graphql/wp-graphql-testcase": "^1.0",
-    "phpunit/phpunit": "9.4.1",
-    "brianhenryie/strauss": "^0.14.0"
+    "phpunit/phpunit": "9.4.1"
   },
   "scripts": {
     "install-test-env": "bash bin/install-test-env.sh",
@@ -93,7 +94,8 @@
       "php ./vendor/bin/phpcbf src"
     ],
     "strauss": [
-      "php ./vendor/bin/strauss",
+      "test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/download/0.14.0/strauss.phar",
+      "php bin/strauss.phar",
       "composer dump-autoload --optimize"
     ]
   },
