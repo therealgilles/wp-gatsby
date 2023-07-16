@@ -93,7 +93,7 @@
       "php ./vendor/bin/phpcbf src"
     ],
     "strauss": [
-      "./vendor/bin/strauss",
+      "php ./vendor/bin/strauss",
       "composer dump-autoload --optimize"
     ]
   },
