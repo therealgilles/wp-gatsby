@@ -51,7 +51,8 @@
     "firebase/php-jwt": "^5.2",
     "ircmaxell/random-lib": "^1.2",
     "ircmaxell/security-lib": "^1.1.0",
-    "composer/semver": "^1.5"
+    "composer/semver": "^1.5",
+    "mikey179/vfsstream": "^v1.6.11"
   },
   "require-dev": {
     "lucatume/wp-browser": "^2.4",
