@@ -14,6 +14,24 @@
       "name": "Tyler Barnes"
     }
   ],
+  "extra" : {
+    "strauss" : {
+      "target_directory": "vendor-prefixed",
+      "namespace_prefix": "WPGatsby\\Vendor\\",
+      "classmap_prefix": "WP_Gatsby_Vendor",
+      "constant_prefix": "WPGATSBY_VENDOR",
+      "delete_vendor_files": false,
+      "include_modified_date": false,
+      "packages" : [
+        "firebase/php-jwt",
+        "ircmaxell/random-lib",
+        "ircmaxell/security-lib"
+      ],
+      "exclude_from_prefix": {
+        "file_patterns": []
+      }
+    }
+  },
   "autoload": {
     "psr-4": {
       "WPGatsby\\": "src/"
@@ -32,7 +50,9 @@
     "php": "^7.3||^8.0",
     "firebase/php-jwt": "^5.2",
     "ircmaxell/random-lib": "^1.2",
-    "composer/semver": "^1.5"
+    "ircmaxell/security-lib": "^1.1.0",
+    "composer/semver": "^1.5",
+    "mikey179/vfsstream": "^v1.6.11"
   },
   "require-dev": {
     "lucatume/wp-browser": "^2.4",
@@ -73,6 +93,11 @@
     ],
     "fix-cs": [
       "php ./vendor/bin/phpcbf src"
+    ],
+    "strauss": [
+      "test -f ./bin/strauss.phar || curl -o bin/strauss.phar -L -C - https://github.com/BrianHenryIE/strauss/releases/download/0.14.0/strauss.phar",
+      "php bin/strauss.phar",
+      "composer dump-autoload --optimize"
     ]
   },
   "support": {
